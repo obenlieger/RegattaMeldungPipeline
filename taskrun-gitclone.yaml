@@ -1,0 +1,18 @@
+apiVersion: tekton.dev/v1beta1
+kind: TaskRun
+metadata:
+  genrateName: git-clone- 
+  labels: 
+    tekton.dev/task: git-clone
+spec:
+  taskRef:
+    name: git-clone
+  params: 
+    - name: url
+      value: https://github.com/obenlieger/RegattaMeldung.git
+    - name: revision
+      value: master
+  workspaces: 
+    - name: output
+      persistentVolumeClaim:
+        claimName: rm-pvc
