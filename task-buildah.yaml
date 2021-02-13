@@ -50,7 +50,6 @@ spec:
   workspaces:
   - name: source
   - name: sslcertdir
-    optional: true
   results:
   - name: IMAGE_DIGEST
     description: Digest of the image just built.
