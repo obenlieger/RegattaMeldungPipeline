@@ -1,0 +1,31 @@
+apiVersion: tekton.dev/v1beta1
+kind: Pipeline
+metadata:
+  name: rmp
+spec:
+  workspaces:
+  - name: source
+  params:
+    - name: contextDir
+      description: the context directory from where to build the application
+  tasks:
+    - name: git-clone
+      taskRef:
+        name: git-clone
+      params:
+        - name: url
+          value: https://github.com/obenlieger/RegattaMeldung.git
+        - name: revision
+          value: master      
+    - name: buildah
+      taskRef:
+        name: buildah
+      runAfter:
+        - git-clone
+      params:
+        - name: IMAGE
+          value: tuxone/regattameldung:1.18
+        - name: DOCKERFILE
+          value: ./RegattaMeldung/Dockerfile
+        - name: CONTEXT
+          value: ./RegattaMeldung
