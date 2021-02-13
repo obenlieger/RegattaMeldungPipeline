@@ -1,0 +1,21 @@
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  annotations:
+    pipeline.openshift.io/started-by: 'kube:admin'
+  name: rmp-1  
+  namespace: regattameldung
+  labels:
+    tekton.dev/pipeline: rmp
+spec:
+  pipelineRef:
+    name: rmp
+  serviceAccountName: pipeline
+  timeout: 1h0m0s
+  workspaces:
+    - name: source
+      persistentVolumeClaim:
+        claimName: rm-pvc
+    - name: output
+      persistentVolumeClaim:
+        claimName: rm-pvc
