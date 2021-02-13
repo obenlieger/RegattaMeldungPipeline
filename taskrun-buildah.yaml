@@ -1,7 +1,7 @@
 apiVersion: tekton.dev/v1beta1
 kind: TaskRun
 metadata:
-  Name: buildah-run
+  name: buildah-run
   labels: 
     tekton.dev/task: buildah
 spec:
