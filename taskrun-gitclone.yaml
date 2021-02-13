@@ -1,7 +1,7 @@
 apiVersion: tekton.dev/v1beta1
 kind: TaskRun
 metadata:
-  genrateName: git-clone- 
+  Name: git-clone-run
   labels: 
     tekton.dev/task: git-clone
 spec:
