@@ -16,6 +16,3 @@ spec:
     - name: source
       persistentVolumeClaim:
         claimName: rm-pvc
-    - name: output
-      persistentVolumeClaim:
-        claimName: rm-pvc
