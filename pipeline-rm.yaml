@@ -5,9 +5,6 @@ metadata:
 spec:
   workspaces:
   - name: source
-  params:
-    - name: contextDir
-      description: the context directory from where to build the application
   tasks:
     - name: git-clone
       taskRef:
