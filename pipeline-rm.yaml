@@ -21,7 +21,7 @@ spec:
         - git-clone
       params:
         - name: IMAGE
-          value: tuxone/regattameldung:1.18
+          value: tuxone/regattameldung:1.13
         - name: DOCKERFILE
           value: ./RegattaMeldung/Dockerfile
         - name: CONTEXT
