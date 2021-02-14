@@ -12,6 +12,6 @@ spec:
     name: rmp
   serviceAccountName: pipeline
   workspaces:
-    - name: source
+    - name: output
       persistentVolumeClaim:
         claimName: rm-pvc
