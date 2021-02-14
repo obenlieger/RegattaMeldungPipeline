@@ -15,3 +15,6 @@ spec:
     - name: pipeline-ws1
       persistentVolumeClaim:
         claimName: rm-pvc
+    - name: sslcertdir
+      emptyDir:
+        {}
