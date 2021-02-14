@@ -4,9 +4,12 @@ metadata:
   name: rmp
 spec:
   workspaces:
-  - name: output
+  - name: pipeline-ws1
   tasks:
     - name: git-clone
+      workspaces:
+        - name: output
+          workspace: pipeline-ws1
       taskRef:
         name: git-clone
       params:
@@ -15,6 +18,9 @@ spec:
         - name: revision
           value: master      
     - name: buildah
+      workspaces:
+        - name: source
+          workspace: pipeline-ws1
       taskRef:
         name: buildah
       runAfter:
